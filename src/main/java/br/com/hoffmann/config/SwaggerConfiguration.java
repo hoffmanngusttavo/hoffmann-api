@@ -31,7 +31,7 @@ public class SwaggerConfiguration {
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
                 .title("API REST - Hoffmann")
-                .description("Documentação api")
+                .description("Documentação api nova")
                 .license("V 1")
                 .licenseUrl("")
                 .build();
