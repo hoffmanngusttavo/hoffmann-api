@@ -1,7 +1,12 @@
 package br.com.hoffmann.repository;
 
-import br.com.hoffmann.model.Usuario;
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.com.hoffmann.entity.Usuario;
+import br.com.hoffmann.repository.generic.GenericCrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+@Repository
+public interface UsuarioRepository extends GenericCrudRepository<Usuario> {
+
+
+
 }
