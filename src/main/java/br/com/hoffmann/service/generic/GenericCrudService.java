@@ -2,8 +2,6 @@ package br.com.hoffmann.service.generic;
 
 import br.com.hoffmann.entity.baseEntity.BaseEntity;
 
-import java.util.Optional;
-
 public interface GenericCrudService <T extends BaseEntity>{
 
 
@@ -11,6 +9,6 @@ public interface GenericCrudService <T extends BaseEntity>{
 
     void deleteById(Long id);
 
-    Optional<T> findById(Long id);
+    T findById(Long id);
 
 }

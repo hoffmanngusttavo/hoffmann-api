@@ -1,12 +1,11 @@
 package br.com.hoffmann.service.generic.impl;
 
 import br.com.hoffmann.entity.baseEntity.BaseEntity;
-import br.com.hoffmann.exception.ServiceException;
 import br.com.hoffmann.repository.generic.GenericCrudRepository;
+import br.com.hoffmann.service.exception.EntityNotFoundException;
+import br.com.hoffmann.service.exception.ServiceException;
 import br.com.hoffmann.service.generic.GenericCrudService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
 
 
 public class GenericCrudServiceImpl <T extends BaseEntity> implements GenericCrudService<T> {
@@ -34,9 +33,10 @@ public class GenericCrudServiceImpl <T extends BaseEntity> implements GenericCru
     }
 
     @Override
-    public Optional<T> findById(Long id) {
+    public T findById(Long id) {
         try {
-           return repository.findById(id);
+           return repository.findById(id)
+                   .orElseThrow(() -> new EntityNotFoundException("Id not found "+ id));
         }catch (Exception ex){
             throw new ServiceException(ex);
         }

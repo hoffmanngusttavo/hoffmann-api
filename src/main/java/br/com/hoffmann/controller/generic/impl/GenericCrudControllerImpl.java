@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GenericCrudControllerImpl<T extends BaseEntity> implements GenericCrudController<T> {
 
     @Autowired
-    private GenericCrudService service;
+    protected GenericCrudService service;
+
 
     @Override
     @DeleteMapping("/{id}")

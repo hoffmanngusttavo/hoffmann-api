@@ -1,4 +1,4 @@
-package br.com.hoffmann.exception;
+package br.com.hoffmann.service.exception;
 
 public class ServiceException extends RuntimeException{
 
