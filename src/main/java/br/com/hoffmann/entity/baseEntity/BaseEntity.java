@@ -23,17 +23,19 @@ public class BaseEntity implements Serializable {
     private Long version;
 
     @CreatedBy
-    @Column(name = "created_by")
+    @Column(name = "created_by", nullable = false, updatable = false)
     private String createdBy;
 
     @CreatedDate
+    @Column(name = "created", nullable = false, updatable = false)
     private Instant created;
 
     @LastModifiedBy
-    @Column(name = "updated_by")
+    @Column(name = "updated_by", nullable = false)
     private String updatedBy;
 
     @LastModifiedBy
+    @Column(name = "updated", nullable = false)
     private Instant updated;
 
 }
