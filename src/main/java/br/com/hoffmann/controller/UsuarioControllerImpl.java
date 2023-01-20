@@ -13,11 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsuarioControllerImpl extends GenericCrudControllerImpl<Usuario> implements UsuarioController {
 
 
-
+    @Override
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> findById(@PathVariable("id") Long id) {
-        return  ResponseEntity.ok().body((Usuario) service.findById(id));
+        return  ResponseEntity.ok()
+                .body((Usuario) service.findById(id));
     }
+
+
+
 
 
 }
