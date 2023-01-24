@@ -1,8 +1,16 @@
-CREATE TABLE usuario (
-                         id int8 NOT NULL,
-                         nome varchar(255) NOT NULL,
-                         idade integer NOT NULL,
-                         CONSTRAINT usuario_pkey PRIMARY KEY (id)
+CREATE TABLE USUARIO (
+                         id bigint NOT NULL ,
+                         login varchar(255) NOT NULL,
+                         senha varchar(15) NOT NULL,
+
+                         version bigint  DEFAULT NULL,
+                         created_by varchar(255) NOT NULL,
+                         updated_by varchar(255) NOT NULL,
+                         created_at timestamp NOT NULL,
+                         updated_at timestamp NOT NULL,
+
+                         CONSTRAINT uk_login_usuario unique (login),
+                         PRIMARY KEY(id)
+
 );
 
-insert into usuario(id, nome, idade) values (1,  'Nataniel', 29);

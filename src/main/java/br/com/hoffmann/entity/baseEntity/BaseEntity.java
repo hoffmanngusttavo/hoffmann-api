@@ -8,7 +8,7 @@ import org.springframework.data.annotation.LastModifiedBy;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -27,15 +27,15 @@ public class BaseEntity implements Serializable {
     private String createdBy;
 
     @CreatedDate
-    @Column(name = "created", nullable = false, updatable = false)
-    private Instant created;
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime created;
 
     @LastModifiedBy
     @Column(name = "updated_by", nullable = false)
     private String updatedBy;
 
     @LastModifiedBy
-    @Column(name = "updated", nullable = false)
-    private Instant updated;
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updated;
 
 }

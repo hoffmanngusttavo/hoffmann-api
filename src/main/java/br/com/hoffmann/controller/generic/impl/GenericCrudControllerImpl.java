@@ -20,11 +20,7 @@ public class GenericCrudControllerImpl<T extends BaseEntity> implements GenericC
     @Override
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
-       try {
-           service.deleteById(id);
-           return new ResponseEntity<>("Sucesso ao apagar", HttpStatus.OK);
-       }catch (Exception ex){
-           return new ResponseEntity<>("Erro ao apagar", HttpStatus.INTERNAL_SERVER_ERROR);
-       }
+        service.deleteById(id);
+        return new ResponseEntity<>("Sucesso ao apagar", HttpStatus.OK);
     }
 }
