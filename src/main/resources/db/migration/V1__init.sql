@@ -1,5 +1,5 @@
 CREATE TABLE USUARIO (
-                         id bigint NOT NULL ,
+                         id BIGSERIAL ,
                          login varchar(255) NOT NULL,
                          senha varchar(15) NOT NULL,
 
