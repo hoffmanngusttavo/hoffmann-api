@@ -27,7 +27,7 @@ public class ResourceExceptionHandler {
     }
 
     @ExceptionHandler({ServiceException.class, Exception.class})
-    public ResponseEntity<StandardError> internalError(EntityNotFoundException exception, HttpServletRequest request){
+    public ResponseEntity<StandardError> internalError(Exception exception, HttpServletRequest request){
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new StandardError.StandardErrorBuilder()
                         .timestamp(Instant.now())
